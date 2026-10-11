@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#050712">
+  <meta name="description" content="The personal portfolio of Devansh Mishra: a CBSE student exploring Python, technology, AI, cybersecurity, problem-solving, and creative projects.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Devansh Mishra — Curious by Design">
+  <meta property="og:description" content="Student. Tech explorer. Creative thinker. A personal journey through learning, code, and ideas.">
+  <meta name="twitter:card" content="summary">
+  <title>Devansh Mishra — Curious by Design</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23070b18'/%3E%3Cpath d='M13 14h15c13 0 21 7 21 18S41 50 28 50H13z' fill='none' stroke='%234ad8ff' stroke-width='4'/%3E%3Cpath d='M19 22h9c7 0 12 4 12 10s-5 10-12 10h-9z' fill='%234ad8ff' opacity='.2'/%3E%3C/svg%3E">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Devansh Mishra",
+    "description": "A CBSE student exploring Python on Android, technology, AI, cybersecurity, problem-solving, and creative ideas."
+  }
+  </script>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #050712;
+      --bg-soft: #080d1c;
+      --panel: rgba(12, 19, 39, .72);
+      --panel-solid: #0b1225;
+      --line: rgba(120, 167, 255, .18);
+      --line-hot: rgba(74, 216, 255, .48);
+      --text: #f0f5ff;
+      --muted: #9aa8c8;
+      --muted-2: #6e7da3;
+      --blue: #4ad8ff;
+      --violet: #9e84ff;
+      --lime: #bdff83;
+      --pink: #ff7ad9;
+      --radius: 22px;
+      --max: 1160px;
+      --ease: cubic-bezier(.2,.75,.2,1);
+      --nav-h: 76px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 22px); }
+    body {
+      margin: 0; min-height: 100vh; overflow-x: hidden; color: var(--text);
+      background: radial-gradient(ellipse at 50% -12%, #171a45 0, transparent 42%), var(--bg);
+      font: 16px/1.65 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    }
+    body::before { content:""; position: fixed; inset: 0; z-index: -2; pointer-events:none; opacity:.28; background-image: linear-gradient(rgba(125,151,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(125,151,255,.045) 1px,transparent 1px); background-size: 48px 48px; mask-image: linear-gradient(to bottom,black,transparent 86%); }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button:focus-visible, a:focus-visible, summary:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
+    ::selection { color:#030611; background:var(--blue); }
+    .skip-link { position:fixed; left:14px; top:-60px; z-index:1000; padding:10px 14px; background:var(--blue); color:#06101b; border-radius:10px; font-weight:800; }
+    .skip-link:focus { top:14px; }
+    #starfield { position:fixed; inset:0; width:100%; height:100%; z-index:-1; pointer-events:none; opacity:.5; }
+    .noise { position:fixed; inset:0; z-index:20; pointer-events:none; opacity:.025; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.95' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.65'/%3E%3C/svg%3E"); }
+    .scroll-progress { position:fixed; z-index:100; top:0; left:0; height:2px; width:100%; transform:scaleX(0); transform-origin:left; background:linear-gradient(90deg,var(--blue),var(--violet),var(--pink)); box-shadow:0 0 16px #4ad8ff8a; }
+    .wrap { width:min(var(--max), calc(100% - 44px)); margin-inline:auto; }
+    .topbar { position:sticky; top:0; z-index:50; height:var(--nav-h); border-bottom:1px solid rgba(120,167,255,.12); background:rgba(5,7,18,.76); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); }
+    .nav { height:100%; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .brand { display:inline-flex; align-items:center; gap:12px; font-weight:800; letter-spacing:-.025em; white-space:nowrap; }
+    .brand-mark { width:41px; aspect-ratio:1; display:grid; place-items:center; border-radius:13px; color:var(--blue); border:1px solid var(--line-hot); background:linear-gradient(145deg,#15274b,#080d1c); box-shadow:inset 0 0 16px #4ad8ff0d,0 0 30px #4ad8ff0b; font-size:.9rem; letter-spacing:-.08em; }
+    .brand span:last-child { font-size:1rem; }
+    .navlinks { display:flex; align-items:center; justify-content:center; gap:5px; }
+    .navlinks a { padding:9px 12px; color:var(--muted); font-size:.88rem; transition:color .25s ease, background .25s ease; border-radius:10px; }
+    .navlinks a:hover, .navlinks a.active { color:var(--text); background:rgba(120,167,255,.08); }
+    .navlinks a.active::after { content:""; display:block; height:2px; width:18px; margin:4px auto -6px; border-radius:9px; background:var(--blue); }
+    .nav-cta { display:inline-flex; align-items:center; gap:8px; border:1px solid var(--line-hot); border-radius:12px; padding:9px 13px; color:var(--blue); font-weight:750; font-size:.86rem; transition:background .25s ease, transform .25s var(--ease); }
+    .nav-cta:hover { background:#4ad8ff13; transform:translateY(-2px); }
+    .menu-button { display:none; color:var(--text); border:1px solid var(--line); border-radius:12px; padding:9px 12px; background:var(--panel-solid); }
+    .hero { position:relative; min-height:690px; display:flex; align-items:center; overflow:hidden; isolation:isolate; }
+    .hero::before { content:""; position:absolute; z-index:-1; width:min(740px,70vw); height:min(740px,70vw); border-radius:50%; right:-12%; top:-6%; background:radial-gradient(circle,rgba(74,216,255,.12),rgba(158,132,255,.055) 38%,transparent 68%); animation:breathe 8s ease-in-out infinite alternate; }
+    .hero::after { content:""; position:absolute; z-index:-1; width:1px; height:56%; right:12%; top:16%; background:linear-gradient(transparent,#4ad8ff33,transparent); transform:rotate(28deg); }
+    .hero-grid { display:grid; grid-template-columns:minmax(0,1.05fr) minmax(350px,.95fr); gap:54px; align-items:center; padding-block:74px 84px; }
+    .eyebrow { display:inline-flex; align-items:center; gap:9px; padding:6px 11px; border:1px solid var(--line); border-radius:999px; color:#b3c6ff; background:rgba(14,22,48,.6); font-size:.76rem; font-weight:750; letter-spacing:.13em; text-transform:uppercase; }
+    .pulse-dot { width:7px; height:7px; border-radius:50%; background:var(--lime); box-shadow:0 0 12px #bdff8380; animation:pulse 2s ease-in-out infinite; }
+    h1 { margin:23px 0 14px; font-size:clamp(3.3rem,7.1vw,6.8rem); letter-spacing:-.085em; line-height:.98; font-weight:850; }
+    .name-line { display:block; color:var(--text); }
+    .name-gradient { display:block; padding-bottom:.12em; background:linear-gradient(100deg,#4ad8ff 6%,#8b9dff 47%,#d6a0ff 88%); background-clip:text; -webkit-background-clip:text; color:transparent; filter:drop-shadow(0 0 34px #567dff19); }
+    .hero-role { min-height:31px; margin:21px 0 13px; display:flex; flex-wrap:wrap; align-items:center; gap:8px; color:#c2caff; font-size:.95rem; font-weight:650; letter-spacing:.03em; }
+    .role-sep { color:var(--muted-2); }
+    .typed-role { color:var(--blue); display:inline-block; min-width:12ch; }
+    .hero-copy { max-width:620px; margin:0; color:var(--muted); font-size:1.08rem; }
+    .hero-copy strong { color:#e7edff; font-weight:650; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:30px; }
+    .button { display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:48px; padding:12px 17px; border:1px solid var(--line); border-radius:14px; color:var(--text); background:rgba(11,18,37,.75); cursor:pointer; font-weight:750; font-size:.91rem; transition:transform .25s var(--ease), border-color .25s ease, background .25s ease, box-shadow .25s ease; }
+    .button:hover { transform:translateY(-3px); border-color:var(--line-hot); background:#101a35; box-shadow:0 12px 30px #02040e70; }
+    .button.primary { color:#04101b; border-color:transparent; background:linear-gradient(115deg,var(--blue),#a8dcff); box-shadow:0 8px 34px #4ad8ff1a; }
+    .button.primary:hover { background:linear-gradient(115deg,#80e8ff,#c6e7ff); box-shadow:0 12px 40px #4ad8ff30; }
+    .button .arrow { transition:transform .22s var(--ease); }
+    .button:hover .arrow { transform:translate(3px,-2px); }
+    .hero-footnote { margin-top:26px; display:flex; align-items:center; gap:11px; font-size:.8rem; color:var(--muted-2); }
+    .hero-footnote::before { content:""; width:31px; height:1px; background:linear-gradient(90deg,var(--blue),transparent); }
+    .visual-stage { position:relative; min-height:480px; display:grid; place-items:center; perspective:1100px; }
+    .orbit { position:absolute; border:1px solid rgba(124,157,255,.18); border-radius:50%; transform:rotate(-24deg); pointer-events:none; }
+    .orbit.one { width:420px; height:230px; animation:orbit 18s linear infinite; }
+    .orbit.two { width:345px; height:345px; border-style:dashed; border-color:rgba(74,216,255,.19); animation:orbit 28s linear infinite reverse; }
+    .orbit.three { width:485px; height:485px; border-color:rgba(158,132,255,.09); }
+    .orbit-dot { position:absolute; width:8px; height:8px; border-radius:50%; background:var(--blue); box-shadow:0 0 20px var(--blue); top:50%; left:calc(50% + 206px); }
+    .profile-art { position:relative; width:min(340px,75vw); aspect-ratio:.82; border:1px solid rgba(101,189,255,.38); border-radius:30px; padding:19px; overflow:hidden; background:linear-gradient(150deg,rgba(22,36,75,.91),rgba(7,12,28,.94) 56%,rgba(17,20,51,.94)); box-shadow:0 30px 90px #0009,0 0 75px #4ad8ff0d,inset 0 0 40px #4ad8ff06; transform-style:preserve-3d; transition:transform .22s ease-out; }
+    .photo-art { padding:0; border-radius:28px; background:#081126; }
+    .photo-art > img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 28%; filter:saturate(.86) contrast(1.04); }
+    .photo-shade { position:absolute; inset:0; background:linear-gradient(180deg,rgba(3,7,18,.22),transparent 34%,rgba(3,7,18,.12) 55%,rgba(3,7,18,.94)); }
+    .photo-art .art-top,.photo-art .art-bottom { position:absolute; left:19px; right:19px; z-index:3; }
+    .photo-art .art-top { top:19px; }
+    .photo-art .art-bottom { bottom:20px; }
+    .photo-art .art-bottom strong { display:block; font-size:.95rem; letter-spacing:.02em; text-transform:none; }
+    .photo-art .art-bottom small { display:block; margin-top:3px; color:#c5d4f4; font-size:.72rem; letter-spacing:0; text-transform:none; }
+    .photo-art::before { z-index:2; pointer-events:none; }
+    .profile-art::before { content:""; position:absolute; inset:9px; border:1px solid rgba(143,170,255,.17); border-radius:23px; pointer-events:none; }
+    .profile-art::after { content:""; position:absolute; inset:0; background:linear-gradient(115deg,transparent 15%,#91e9ff12 36%,transparent 58%); transform:translateX(-120%); animation:glint 8s ease-in-out infinite; pointer-events:none; }
+    .art-top, .art-bottom { position:relative; z-index:2; display:flex; justify-content:space-between; align-items:center; color:#a9c5ff; font-size:.68rem; font-weight:750; letter-spacing:.13em; text-transform:uppercase; }
+    .art-top .mini-pill { color:var(--lime); border:1px solid #bdff833a; padding:4px 7px; border-radius:999px; font-size:.58rem; letter-spacing:.1em; }
+    .monogram-wrap { position:absolute; inset:0; display:grid; place-items:center; overflow:hidden; }
+    .monogram-halo { position:absolute; width:220px; aspect-ratio:1; border-radius:50%; border:1px solid #4ad8ff2e; box-shadow:0 0 65px #4ad8ff0b,inset 0 0 44px #4ad8ff0b; }
+    .monogram-halo::before,.monogram-halo::after { content:""; position:absolute; border:1px solid #a58dff2b; border-radius:50%; inset:22px; }
+    .monogram-halo::after { inset:46px; border-color:#4ad8ff3a; }
+    .monogram-core { position:relative; display:grid; place-items:center; width:156px; aspect-ratio:1; border-radius:37px; border:1px solid #83dfff88; background:linear-gradient(140deg,#173a63,#111835 64%,#34204c); box-shadow:0 0 64px #4ad8ff28,inset 0 0 25px #8fa5ff0f; transform:rotate(-7deg) translateZ(35px); }
+    .monogram-core span { font-size:4.2rem; line-height:1; font-weight:900; letter-spacing:-.11em; margin-left:-.1em; color:transparent; background:linear-gradient(135deg,#fff,#69dfff 55%,#a995ff); background-clip:text; -webkit-background-clip:text; }
+    .art-corner { position:absolute; width:24px; height:24px; border-color:var(--blue); opacity:.9; }
+    .art-corner.tl { top:0; left:0; border-top:2px solid; border-left:2px solid; border-top-left-radius:9px; }
+    .art-corner.tr { top:0; right:0; border-top:2px solid; border-right:2px solid; border-top-right-radius:9px; }
+    .art-corner.bl { bottom:0; left:0; border-bottom:2px solid; border-left:2px solid; border-bottom-left-radius:9px; }
+    .art-corner.br { bottom:0; right:0; border-bottom:2px solid; border-right:2px solid; border-bottom-right-radius:9px; }
+    .art-bottom { position:absolute; bottom:20px; left:20px; right:20px; align-items:flex-end; }
+    .art-bottom strong { display:block; color:#f0f5ff; font-size:.92rem; letter-spacing:0; text-transform:none; }
+    .art-bottom small { display:block; color:var(--muted); font-size:.68rem; letter-spacing:.03em; text-transform:none; font-weight:500; }
+    .floating-chip { position:absolute; z-index:3; display:flex; align-items:center; gap:9px; padding:11px 14px; border:1px solid var(--line); border-radius:14px; background:rgba(8,13,30,.87); box-shadow:0 16px 40px #0007; backdrop-filter:blur(14px); animation:float 6s ease-in-out infinite; }
+    .floating-chip .chip-icon { width:30px; height:30px; display:grid; place-items:center; border-radius:9px; color:var(--blue); background:#4ad8ff13; border:1px solid #4ad8ff29; font-size:.9rem; }
+    .floating-chip b { display:block; font-size:.77rem; line-height:1.3; }
+    .floating-chip small { color:var(--muted); font-size:.68rem; }
+    .chip-a { top:63px; right:-2px; animation-delay:-2s; }
+    .chip-b { bottom:75px; left:-24px; animation-delay:-4s; }
+    .chip-c { bottom:20px; right:3px; animation-delay:-1s; }
+    .section { position:relative; padding:102px 0; border-top:1px solid rgba(120,167,255,.1); }
+    .section::before { content:""; position:absolute; left:0; top:-1px; width:90px; height:1px; background:linear-gradient(90deg,var(--blue),transparent); }
+    .section-head { max-width:760px; margin-bottom:35px; }
+    .kicker { color:var(--blue); text-transform:uppercase; font-size:.74rem; letter-spacing:.19em; font-weight:800; }
+    h2 { margin:8px 0 11px; font-size:clamp(2.2rem,4.5vw,3.65rem); line-height:1.08; letter-spacing:-.065em; }
+    .section-lead { margin:0; max-width:680px; color:var(--muted); font-size:1.04rem; }
+    .accent { color:var(--blue); }
+    .about-layout { display:grid; grid-template-columns:1.08fr .92fr; gap:18px; align-items:stretch; }
+    .glass { border:1px solid var(--line); border-radius:var(--radius); background:linear-gradient(140deg,rgba(13,22,43,.82),rgba(7,11,25,.76)); box-shadow:0 20px 60px rgba(0,0,0,.12); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); }
+    .about-copy { padding:clamp(24px,4vw,39px); }
+    .about-copy p { margin:0 0 15px; color:#b4bfd9; }
+    .about-copy p:last-child { margin-bottom:0; }
+    .quote-box { padding:clamp(24px,4vw,39px); display:flex; flex-direction:column; justify-content:space-between; gap:30px; overflow:hidden; position:relative; }
+    .quote-box::after { content:"“"; position:absolute; right:16px; top:-66px; font-family:Georgia,serif; color:#4ad8ff0e; font-size:19rem; line-height:1; }
+    .quote-mark { color:var(--violet); font-size:2.7rem; line-height:.7; }
+    .quote-text { position:relative; z-index:1; font-size:clamp(1.25rem,2.5vw,1.8rem); line-height:1.43; letter-spacing:-.035em; font-weight:650; }
+    .quote-by { color:var(--muted); font-size:.82rem; }
+    .micro-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:18px; }
+    .micro-card { padding:19px 17px; border:1px solid var(--line); background:rgba(9,15,31,.68); border-radius:16px; transition:transform .3s var(--ease),border-color .3s ease,background .3s ease; }
+    .micro-card:hover { transform:translateY(-5px); border-color:#4ad8ff4f; background:rgba(14,23,47,.85); }
+    .micro-card .micro-number { color:var(--blue); font-size:.76rem; font-weight:850; letter-spacing:.1em; }
+    .micro-card h3 { margin:9px 0 5px; font-size:.93rem; }
+    .micro-card p { margin:0; color:var(--muted); font-size:.8rem; line-height:1.5; }
+    .timeline { display:grid; grid-template-columns:1fr .38fr; gap:18px; align-items:stretch; }
+    .timeline-list { padding:24px 27px; }
+    .timeline-row { display:grid; grid-template-columns:27px 1fr auto; gap:13px; padding:19px 0; border-bottom:1px solid rgba(120,167,255,.11); }
+    .timeline-row:first-child { padding-top:5px; }
+    .timeline-row:last-child { border-bottom:0; padding-bottom:5px; }
+    .timeline-symbol { width:27px; height:27px; display:grid; place-items:center; color:var(--blue); border:1px solid #4ad8ff36; background:#4ad8ff0c; border-radius:9px; font-size:.82rem; }
+    .timeline-row h3 { margin:0 0 4px; font-size:1rem; }
+    .timeline-row p { margin:0; color:var(--muted); font-size:.87rem; }
+    .timeline-tag { align-self:start; padding:5px 8px; border:1px solid var(--line); border-radius:999px; color:#a8b6d5; font-size:.69rem; white-space:nowrap; }
+    .education-aside { padding:26px; display:flex; flex-direction:column; justify-content:space-between; gap:22px; background:radial-gradient(ellipse at 100% 0%,#4a63ad1a,transparent 58%),rgba(9,15,31,.72); }
+    .education-aside .big-glyph { font-size:2.3rem; color:var(--violet); }
+    .education-aside h3 { margin:0 0 7px; font-size:1.3rem; letter-spacing:-.03em; }
+    .education-aside p { color:var(--muted); margin:0; font-size:.9rem; }
+    .tag-row { display:flex; flex-wrap:wrap; gap:7px; }
+    .tag { padding:6px 9px; border-radius:999px; background:#101936; border:1px solid #697fc12e; color:#bac7e9; font-size:.73rem; }
+    .interest-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .interest-card { --glow:74,216,255; min-height:205px; position:relative; overflow:hidden; padding:25px; transition:transform .23s ease,border-color .25s ease,box-shadow .25s ease; transform-style:preserve-3d; will-change:transform; }
+    .interest-card::before { content:""; position:absolute; inset:auto -30px -90px auto; width:190px; aspect-ratio:1; border-radius:50%; background:radial-gradient(circle,rgba(var(--glow),.12),transparent 70%); opacity:.8; transition:opacity .3s ease; }
+    .interest-card:hover { border-color:rgba(var(--glow),.44); box-shadow:0 18px 45px rgba(0,0,0,.22),0 0 35px rgba(var(--glow),.055); }
+    .interest-card:hover::before { opacity:1; }
+    .interest-card:nth-child(2) { --glow:158,132,255; }
+    .interest-card:nth-child(3) { --glow:255,122,217; }
+    .interest-card:nth-child(4) { --glow:189,255,131; }
+    .interest-card:nth-child(5) { --glow:255,192,114; }
+    .interest-card:nth-child(6) { --glow:101,162,255; }
+    .card-top { display:flex; align-items:center; justify-content:space-between; gap:14px; margin-bottom:23px; }
+    .interest-icon { width:45px; height:45px; display:grid; place-items:center; border:1px solid rgba(var(--glow),.28); background:rgba(var(--glow),.08); color:rgb(var(--glow)); border-radius:14px; font-size:1.25rem; }
+    .card-index { color:#68769a; font-size:.72rem; letter-spacing:.13em; }
+    .interest-card h3 { position:relative; margin:0 0 8px; font-size:1.15rem; letter-spacing:-.025em; }
+    .interest-card p { position:relative; margin:0; color:var(--muted); font-size:.89rem; }
+    .status-pill { display:inline-flex; align-items:center; gap:6px; margin-top:17px; color:#b0bedb; font-size:.69rem; }
+    .status-pill::before { content:""; width:5px; height:5px; background:var(--lime); border-radius:50%; box-shadow:0 0 8px #bdff835c; }
+    .work-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:15px; }
+    .work-card { position:relative; overflow:hidden; min-height:240px; padding:27px; transition:transform .3s var(--ease),border-color .3s ease; }
+    .work-card:hover { transform:translateY(-5px); border-color:var(--line-hot); }
+    .work-head { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:30px; }
+    .work-icon { width:43px; height:43px; border-radius:13px; display:grid; place-items:center; color:var(--blue); border:1px solid #4ad8ff30; background:#4ad8ff0c; font-size:1.2rem; }
+    .work-type { color:var(--muted-2); font-size:.72rem; text-transform:uppercase; letter-spacing:.12em; }
+    .work-card h3 { margin:0 0 8px; font-size:1.25rem; letter-spacing:-.03em; }
+    .work-card p { margin:0; color:var(--muted); font-size:.91rem; max-width:500px; }
+    .work-card .status-pill { color:#a9b9d8; }
+    .honesty-note { display:flex; gap:12px; align-items:flex-start; margin-top:16px; border:1px dashed #7e91c132; border-radius:14px; padding:15px 17px; color:var(--muted); font-size:.81rem; }
+    .honesty-note span { color:var(--lime); }
+    .approach-grid { display:grid; grid-template-columns:.75fr 1.25fr; gap:18px; }
+    .approach-lead { padding:30px; }
+    .approach-lead h3 { margin:0 0 12px; font-size:1.5rem; letter-spacing:-.04em; }
+    .approach-lead p { margin:0; color:var(--muted); }
+    .principle-list { padding:11px 27px; }
+    .principle-row { display:flex; align-items:flex-start; gap:14px; padding:16px 0; border-bottom:1px solid rgba(120,167,255,.1); }
+    .principle-row:last-child { border-bottom:0; }
+    .principle-row .n { color:var(--blue); font-weight:850; font-size:.74rem; letter-spacing:.12em; margin-top:3px; }
+    .principle-row h4 { margin:0 0 3px; font-size:.93rem; }
+    .principle-row p { margin:0; color:var(--muted); font-size:.83rem; }
+    .contact-panel { position:relative; overflow:hidden; display:grid; grid-template-columns:1fr auto; gap:30px; align-items:center; padding:clamp(28px,5vw,54px); background:radial-gradient(ellipse at 100% 0%,#55439a24,transparent 55%),linear-gradient(135deg,#0c1530,#080c1b); }
+    .contact-panel::after { content:""; position:absolute; right:100px; top:-150px; width:300px; aspect-ratio:1; border:1px solid #4ad8ff13; border-radius:50%; box-shadow:0 0 0 36px #4ad8ff06,0 0 0 72px #a38dff05; pointer-events:none; }
+    .contact-panel h2 { max-width:670px; font-size:clamp(2rem,4vw,3.2rem); }
+    .contact-panel p { max-width:650px; margin:0; color:var(--muted); }
+    .contact-actions { position:relative; z-index:1; display:flex; flex-direction:column; gap:10px; min-width:180px; }
+    .footer { padding:30px 0 42px; color:var(--muted-2); font-size:.81rem; }
+    .footer-inner { display:flex; justify-content:space-between; align-items:center; gap:15px; flex-wrap:wrap; }
+    .footer-brand { color:#d7e0f7; font-weight:750; }
+    .footer-right { display:flex; align-items:center; gap:14px; }
+    .footer-right a { color:var(--muted); transition:color .2s ease; }
+    .footer-right a:hover { color:var(--blue); }
+    .backtop { width:33px; height:33px; display:grid; place-items:center; border:1px solid var(--line); border-radius:10px; color:var(--blue)!important; }
+    .footnote { margin-top:15px; padding-top:14px; border-top:1px solid rgba(120,167,255,.09); color:#657494; font-size:.73rem; }
+    .reveal { opacity:0; transform:translateY(22px); transition:opacity .8s var(--ease), transform .8s var(--ease); }
+    .reveal.in-view { opacity:1; transform:translateY(0); }
+    .reveal.delay-1 { transition-delay:.08s; } .reveal.delay-2 { transition-delay:.16s; } .reveal.delay-3 { transition-delay:.24s; }
+    .cursor-dot,.cursor-ring { position:fixed; pointer-events:none; z-index:1000; border-radius:50%; left:0; top:0; transform:translate(-50%,-50%); opacity:0; }
+    .cursor-dot { width:5px; height:5px; background:var(--blue); box-shadow:0 0 12px var(--blue); }
+    .cursor-ring { width:31px; height:31px; border:1px solid #4ad8ff8f; transition:width .18s ease,height .18s ease,border-color .18s ease; }
+    body.cursor-ready .cursor-dot,body.cursor-ready .cursor-ring { opacity:1; }
+    body.cursor-hover .cursor-ring { width:48px; height:48px; border-color:#b19cff; }
+    .motion-toggle { position:fixed; z-index:40; right:16px; bottom:16px; display:inline-flex; align-items:center; gap:8px; padding:9px 12px; color:#aab9da; border:1px solid var(--line); border-radius:999px; background:rgba(8,13,29,.85); backdrop-filter:blur(12px); font-size:.72rem; cursor:pointer; box-shadow:0 6px 25px #0005; }
+    .motion-toggle:hover { border-color:var(--line-hot); color:var(--text); }
+    .toast { position:fixed; z-index:100; left:50%; bottom:24px; transform:translate(-50%,18px); opacity:0; pointer-events:none; padding:10px 15px; border:1px solid var(--line-hot); border-radius:12px; color:var(--text); background:#09152b; box-shadow:0 15px 40px #0007; font-size:.84rem; transition:opacity .25s ease,transform .25s ease; }
+    .toast.show { opacity:1; transform:translate(-50%,0); }
+    .motion-off *, .motion-off *::before,.motion-off *::after { animation-duration:.01ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; transition-duration:.01ms!important; }
+    @keyframes pulse { 0%,100%{opacity:1;box-shadow:0 0 12px #bdff8380} 50%{opacity:.5;box-shadow:0 0 3px #bdff8320} }
+    @keyframes breathe { from{transform:scale(.93) translate3d(0,0,0);opacity:.8} to{transform:scale(1.08) translate3d(-2%,3%,0);opacity:1} }
+    @keyframes orbit { from{transform:rotate(-24deg)} to{transform:rotate(336deg)} }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+    @keyframes glint { 0%,62%,100%{transform:translateX(-120%)} 78%{transform:translateX(120%)} }
+    .photo-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px; max-width:850px; }
+    .personal-photo { margin:0; overflow:hidden; border-radius:20px; }
+    .personal-photo img { display:block; width:100%; height:clamp(260px,42vw,470px); object-fit:cover; object-position:center 28%; transition:transform .7s cubic-bezier(.2,.75,.2,1),filter .7s; }
+    .personal-photo:hover img { transform:scale(1.035); filter:saturate(1.08); }
+    .personal-photo figcaption { display:flex; align-items:center; gap:12px; padding:13px 16px; color:var(--muted); font-size:.82rem; }
+    .personal-photo figcaption span { color:var(--blue); font-weight:800; letter-spacing:.1em; }
+    @media(max-width:640px) { .photo-grid { grid-template-columns:1fr; } .personal-photo img { height:auto; max-height:520px; object-fit:cover; } }
+    @media (hover:hover) and (pointer:fine) { body, a, button { cursor:none; } }
+    @media(max-width:980px) {
+      :root{--nav-h:70px} .navlinks{gap:0}.navlinks a{padding:8px 9px;font-size:.82rem}.nav-cta{display:none}
+      .hero{min-height:auto}.hero-grid{grid-template-columns:1fr .86fr;gap:24px;padding-block:70px}.visual-stage{min-height:400px}.profile-art{width:min(300px,100%)}.orbit.one{width:350px;height:200px}.orbit.two{width:285px;height:285px}.orbit.three{width:400px;height:400px}.chip-a{right:-4px;top:49px}.chip-b{left:-6px;bottom:55px}.chip-c{right:-2px;bottom:10px}
+      .micro-grid{grid-template-columns:repeat(2,1fr)}.timeline{grid-template-columns:1fr .7fr}.interest-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:740px) {
+      .wrap{width:min(var(--max),calc(100% - 34px))}.navlinks{display:none;position:absolute;left:17px;right:17px;top:calc(var(--nav-h) - 1px);padding:10px;background:rgba(7,11,25,.98);border:1px solid var(--line);border-radius:16px;box-shadow:0 25px 60px #0009;align-items:stretch;flex-direction:column;gap:2px}.navlinks.open{display:flex}.navlinks a{padding:12px 13px;font-size:.93rem}.navlinks a.active::after{display:none}.menu-button{display:inline-flex;align-items:center;gap:8px}.brand-mark{width:38px}.hero-grid{grid-template-columns:1fr;gap:13px;padding-block:47px 55px}.hero-copy{font-size:1rem}.hero h1{font-size:clamp(3.1rem,12vw,5.4rem)}.visual-stage{grid-row:1;min-height:345px;margin:0 auto 6px;width:min(100%,440px)}.profile-art{width:255px;aspect-ratio:.82}.orbit.one{width:310px;height:175px}.orbit.two{width:260px;height:260px}.orbit.three{width:360px;height:360px}.chip-a{right:1px;top:30px}.chip-b{left:0;bottom:40px}.chip-c{right:0;bottom:0}.floating-chip{padding:8px 10px}.floating-chip .chip-icon{width:27px;height:27px}.hero-footnote{margin-top:19px}.section{padding:72px 0}.about-layout,.timeline,.approach-grid{grid-template-columns:1fr}.timeline-tag{font-size:.65rem}.education-aside{min-height:220px}.interest-grid{grid-template-columns:repeat(2,1fr)}.interest-card{min-height:200px;padding:20px}.work-grid{grid-template-columns:1fr}.work-card{min-height:210px}.contact-panel{grid-template-columns:1fr;gap:22px}.contact-actions{flex-direction:row;flex-wrap:wrap}.contact-actions .button{flex:1}
+    }
+    @media(max-width:480px) {
+      .wrap{width:calc(100% - 28px)}.brand span:last-child{font-size:.9rem}.brand{gap:8px}.menu-button{padding:8px 10px}.visual-stage{min-height:315px}.profile-art{width:225px;padding:15px}.monogram-core{width:126px}.monogram-core span{font-size:3.55rem}.monogram-halo{width:184px}.orbit.one{width:270px;height:145px}.orbit.two{width:230px;height:230px}.orbit.three{width:315px;height:315px}.floating-chip{gap:7px;font-size:.68rem}.floating-chip b{font-size:.69rem}.floating-chip small{font-size:.61rem}.chip-b{left:-1px;bottom:26px}.chip-a{right:-2px;top:20px}.chip-c{right:-2px;bottom:-8px}.hero h1{font-size:clamp(2.85rem,12vw,4rem)}.hero-role{font-size:.81rem;gap:6px}.hero-copy{font-size:.94rem}.hero-actions{gap:9px}.hero-actions .button{padding:11px 12px;font-size:.82rem;flex:1}.section{padding:60px 0}.section-head{margin-bottom:25px}.section-lead{font-size:.94rem}.about-copy,.quote-box{padding:22px}.micro-grid{gap:9px}.micro-card{padding:15px 13px}.timeline-list{padding:20px 17px}.timeline-row{grid-template-columns:27px 1fr;gap:10px}.timeline-tag{grid-column:2;justify-self:start;margin-top:2px}.education-aside{padding:22px}.interest-grid{grid-template-columns:1fr}.interest-card{min-height:0;padding:21px}.card-top{margin-bottom:17px}.work-card{padding:22px}.principle-list{padding:5px 20px}.approach-lead{padding:24px}.contact-panel{padding:25px 21px}.contact-actions .button{width:100%;flex:auto}.footer-inner{align-items:flex-start;flex-direction:column}.footer-right{flex-wrap:wrap}.motion-toggle{right:10px;bottom:10px}.cursor-dot,.cursor-ring{display:none}
+    }
+    @media(prefers-reduced-motion:reduce) {
+      html{scroll-behavior:auto} *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div><div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#home" aria-label="Devansh Mishra home"><span class="brand-mark">DM</span><span>Devansh Mishra<span class="accent">.</span></span></a>
+      <nav class="navlinks" id="navlinks" aria-label="Main navigation">
+        <a class="active" href="#home">Home</a><a href="#about">About</a><a href="#education">Education</a><a href="#interests">Interests</a><a href="#photos">Photos</a><a href="#work">Explorations</a><a href="#contact">Contact</a>
+      </nav>
+      <a class="nav-cta magnetic" href="#contact">Let's connect <span aria-hidden="true">↗</span></a>
+      <button class="menu-button" id="menuButton" aria-expanded="false" aria-controls="navlinks"><span id="menuIcon" aria-hidden="true">☰</span> Menu</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div class="hero-content">
+          <div class="eyebrow"><span class="pulse-dot" aria-hidden="true"></span> DIGITAL INTRODUCTION · 2026</div>
+          <h1 id="hero-title"><span class="name-line">Devansh</span><span class="name-gradient">Mishra.</span></h1>
+          <div class="hero-role"><span>Student</span><span class="role-sep">/</span><span class="typed-role" id="typedRole">Tech explorer</span><span class="role-sep">/</span><span>Creative thinker</span></div>
+          <p class="hero-copy">Curious about how things work. Currently navigating <strong>Class 12 CBSE</strong>, exploring <strong>Python on Android</strong>, and learning how technology and creative ideas can solve real problems.</p>
+          <div class="hero-actions"><a class="button primary magnetic" href="#about">Explore my world <span class="arrow" aria-hidden="true">↘</span></a><button class="button" id="shareButton" type="button">Share this page <span class="arrow" aria-hidden="true">↗</span></button></div>
+          <div class="hero-footnote">A living profile — learning, experimenting, improving.</div>
+        </div>
+        <div class="visual-stage" id="visualStage" aria-label="Abstract digital monogram artwork">
+          <div class="orbit one" aria-hidden="true"></div><div class="orbit two" aria-hidden="true"></div><div class="orbit three" aria-hidden="true"><span class="orbit-dot"></span></div>
+          <div class="profile-art photo-art" id="profileArt">
+            <img src="assets/devansh-portrait.webp" alt="Devansh Mishra, personal portrait" width="1000" height="1000" fetchpriority="high">
+            <div class="photo-shade"></div>
+            <div class="art-top"><span>PERSONAL NODE / 001</span><span class="mini-pill">IN PROGRESS</span></div>
+            <div class="art-bottom"><div><strong>Devansh Mishra</strong><small>Student · Learning by doing</small></div><span aria-hidden="true">✳</span></div>
+          </div>
+          <div class="floating-chip chip-a"><span class="chip-icon" aria-hidden="true">⌘</span><span><b>Python + Android</b><small>Learning by doing</small></span></div>
+          <div class="floating-chip chip-b"><span class="chip-icon" aria-hidden="true">✦</span><span><b>Curiosity mode</b><small>Always exploring</small></span></div>
+          <div class="floating-chip chip-c"><span class="chip-icon" aria-hidden="true">◎</span><span><b>Build · Test · Learn</b><small>One step at a time</small></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <header class="section-head reveal"><div class="kicker">01 / The person behind the screen</div><h2 id="about-title">A little about <span class="accent">me.</span></h2><p class="section-lead">Not a finished story. Just a curious student building skills, one experiment at a time.</p></header>
+        <div class="about-layout">
+          <article class="glass about-copy reveal">
+            <p>I'm Devansh Mishra, a student who likes practical explanations, technology, and figuring things out. I often work through school topics step by step, especially when there's an exam clock ticking.</p>
+            <p>Outside the textbook, I've explored Python and troubleshooting in the Android app <strong>Pydroid</strong>, experimented with AI-powered ideas, and developed creative concepts for digital advertising. I like taking an idea from “could this work?” to a small, testable plan.</p>
+            <p>This site is my public notebook: a place to document things I'm learning, showcase projects when they're ready, and update the journey as I grow. The goal isn't to look like an expert in everything—it's to keep getting better.</p>
+          </article>
+          <aside class="glass quote-box reveal delay-1"><div class="quote-mark" aria-hidden="true">“</div><div class="quote-text">Curiosity starts the journey. Consistency turns it into progress.</div><div class="quote-by">A personal reminder · Devansh Mishra</div></aside>
+        </div>
+        <div class="micro-grid">
+          <article class="micro-card reveal"><div class="micro-number">01 / STUDY</div><h3>Exam-focused learning</h3><p>Breaking complex topics into clear, usable notes.</p></article>
+          <article class="micro-card reveal delay-1"><div class="micro-number">02 / CODE</div><h3>Hands-on experiments</h3><p>Exploring Python and debugging on Android.</p></article>
+          <article class="micro-card reveal delay-2"><div class="micro-number">03 / TECH</div><h3>Future-facing ideas</h3><p>Learning about AI tools and cybersecurity basics.</p></article>
+          <article class="micro-card reveal delay-3"><div class="micro-number">04 / CREATE</div><h3>Visual concepts</h3><p>Thinking through ads, interfaces, and digital experiences.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="education" aria-labelledby="education-title">
+      <div class="wrap">
+        <header class="section-head reveal"><div class="kicker">02 / The learning path</div><h2 id="education-title">Learning in <span class="accent">progress.</span></h2><p class="section-lead">School is the current chapter; independent experiments are the side quests.</p></header>
+        <div class="timeline">
+          <div class="glass timeline-list reveal">
+            <div class="timeline-row"><span class="timeline-symbol" aria-hidden="true">▤</span><div><h3>Class 12 · CBSE</h3><p>Studying at Kendriya Vidyalaya Fatehgarh, with a focus on board preparation and strengthening foundations across school subjects.</p></div><span class="timeline-tag">Current chapter</span></div>
+            <div class="timeline-row"><span class="timeline-symbol" aria-hidden="true">⌘</span><div><h3>Python on Android</h3><p>Using Pydroid to explore code, packages, errors, and practical debugging.</p></div><span class="timeline-tag">Hands-on</span></div>
+            <div class="timeline-row"><span class="timeline-symbol" aria-hidden="true">✧</span><div><h3>AI & cybersecurity awareness</h3><p>Exploring AI-powered tools and preparing accessible explanations of online safety concepts.</p></div><span class="timeline-tag">Exploring</span></div>
+            <div class="timeline-row"><span class="timeline-symbol" aria-hidden="true">↗</span><div><h3>Web & creative projects</h3><p>Learning to turn ideas into lightweight websites, presentations, and design concepts.</p></div><span class="timeline-tag">Building</span></div>
+          </div>
+          <aside class="glass education-aside reveal delay-1"><div><div class="big-glyph" aria-hidden="true">✳</div><h3>Learn the basics.<br>Make something real.</h3><p>I value explanations that are clear enough to understand—and practical enough to use.</p></div><div class="tag-row"><span class="tag">Practice</span><span class="tag">Curiosity</span><span class="tag">Consistency</span><span class="tag">Iteration</span></div></aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="photos" aria-labelledby="photos-title">
+      <div class="wrap">
+        <header class="section-head reveal"><div class="kicker">03 / Moments</div><h2 id="photos-title">A few frames of <span class="accent">me.</span></h2><p class="section-lead">Personal photos shared for this portfolio. Images are optimized for faster loading.</p></header>
+        <div class="photo-grid">
+          <figure class="glass personal-photo reveal"><img src="assets/devansh-portrait.webp" alt="Devansh Mishra in a dark jacket and light sweater" width="1000" height="1000" loading="lazy"><figcaption><span>01</span> Portrait · Personal profile</figcaption></figure>
+          <figure class="glass personal-photo reveal delay-1"><img src="assets/devansh-denim.webp" alt="Devansh Mishra wearing a denim jacket, photographed in a mirror" width="900" height="1200" loading="lazy"><figcaption><span>02</span> Everyday style · Personal profile</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="interests" aria-labelledby="interests-title">
+      <div class="wrap">
+        <header class="section-head reveal"><div class="kicker">03 / Curious by nature</div><h2 id="interests-title">Things I like <span class="accent">exploring.</span></h2><p class="section-lead">Interests are a starting point, not a claim of expertise. These are topics I've asked about, practised, or developed ideas around.</p></header>
+        <div class="interest-grid">
+          <article class="glass interest-card reveal"><div class="card-top"><span class="interest-icon" aria-hidden="true">⌘</span><span class="card-index">AREA / 01</span></div><h3>Python & coding</h3><p>Learning code, understanding errors, and testing small ideas in a real environment.</p><span class="status-pill">Actively exploring</span></article>
+          <article class="glass interest-card reveal delay-1"><div class="card-top"><span class="interest-icon" aria-hidden="true">✧</span><span class="card-index">AREA / 02</span></div><h3>AI & automation</h3><p>Exploring AI tools and how automation can make information or workflows easier to use.</p><span class="status-pill">Curiosity-driven</span></article>
+          <article class="glass interest-card reveal delay-2"><div class="card-top"><span class="interest-icon" aria-hidden="true">⛨</span><span class="card-index">AREA / 03</span></div><h3>Cybersecurity</h3><p>Interested in clear, real-life explanations of online safety and digital security.</p><span class="status-pill">Learning basics</span></article>
+          <article class="glass interest-card reveal"><div class="card-top"><span class="interest-icon" aria-hidden="true">▤</span><span class="card-index">AREA / 04</span></div><h3>Study strategy</h3><p>Turning large school chapters into concise notes, revision points, and understandable steps.</p><span class="status-pill">Part of student life</span></article>
+          <article class="glass interest-card reveal delay-1"><div class="card-top"><span class="interest-icon" aria-hidden="true">✳</span><span class="card-index">AREA / 05</span></div><h3>Creative advertising</h3><p>Brainstorming product-led campaign ideas, visual directions, and clear messages.</p><span class="status-pill">Concept development</span></article>
+          <article class="glass interest-card reveal delay-2"><div class="card-top"><span class="interest-icon" aria-hidden="true">◈</span><span class="card-index">AREA / 06</span></div><h3>Web experiences</h3><p>Interested in modern interfaces that feel polished but remain fast and easy to use.</p><span class="status-pill">Building this site</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="wrap">
+        <header class="section-head reveal"><div class="kicker">04 / Workbench</div><h2 id="work-title">Ideas becoming <span class="accent">projects.</span></h2><p class="section-lead">A transparent look at the kinds of work I've explored. Items below describe areas and concepts—not awards or finished products unless marked as such.</p></header>
+        <div class="work-grid">
+          <article class="glass work-card reveal"><div class="work-head"><span class="work-icon" aria-hidden="true">⌘</span><span class="work-type">Programming</span></div><h3>Python-on-Android experiments</h3><p>Working through setup issues, package installation, error messages, and the basics of getting Python projects running in Pydroid.</p><span class="status-pill">Learning log · In progress</span></article>
+          <article class="glass work-card reveal delay-1"><div class="work-head"><span class="work-icon" aria-hidden="true">⛨</span><span class="work-type">Education</span></div><h3>Cybersecurity awareness content</h3><p>Exploring a student-friendly presentation approach that connects cyber safety topics with familiar, everyday situations.</p><span class="status-pill">Presentation concept</span></article>
+          <article class="glass work-card reveal"><div class="work-head"><span class="work-icon" aria-hidden="true">✳</span><span class="work-type">Creative direction</span></div><h3>Audio-product ad concepts</h3><p>Brainstorming visual ideas for audio products with attention to originality, feature integration, clarity, and social-post presentation.</p><span class="status-pill">Creative exploration</span></article>
+          <article class="glass work-card reveal delay-1"><div class="work-head"><span class="work-icon" aria-hidden="true">◈</span><span class="work-type">Web design</span></div><h3>Personal portfolio</h3><p>Building this responsive, animated portfolio as a lightweight page with no framework dependency, no paid API, and accessible motion controls.</p><span class="status-pill">Current website</span></article>
+        </div>
+        <div class="honesty-note reveal"><span aria-hidden="true">✦</span><div><strong>Keeping it real:</strong> I haven't supplied verified awards, certificates, grades, a school name, or public social handles. None are made up here. This section can grow when I have public links and confirmed milestones to add.</div></div>
+      </div>
+    </section>
+
+    <section class="section" id="approach" aria-labelledby="approach-title">
+      <div class="wrap">
+        <header class="section-head reveal"><div class="kicker">05 / Personal operating system</div><h2 id="approach-title">How I like to <span class="accent">learn.</span></h2></header>
+        <div class="approach-grid">
+          <article class="glass approach-lead reveal"><h3>Make it clear.<br>Then make it work.</h3><p>I learn best when an idea is broken down, tested, corrected, and connected to a real use case. Progress beats pretending to have every answer.</p></article>
+          <div class="glass principle-list reveal delay-1">
+            <div class="principle-row"><span class="n">01</span><div><h4>Understand before memorising</h4><p>Start with a clear explanation, then practise it in my own words.</p></div></div>
+            <div class="principle-row"><span class="n">02</span><div><h4>Debug instead of giving up</h4><p>Read the error, isolate the problem, and change one thing at a time.</p></div></div>
+            <div class="principle-row"><span class="n">03</span><div><h4>Build in small steps</h4><p>Make a useful first version, then improve it with feedback.</p></div></div>
+            <div class="principle-row"><span class="n">04</span><div><h4>Keep the public story accurate</h4><p>Share real learning, real work, and verifiable milestones—no inflated claims.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <div class="glass contact-panel reveal"><div><div class="kicker">06 / Stay connected</div><h2 id="contact-title">Good ideas start with <span class="accent">a conversation.</span></h2><p>Want to connect about a project, an idea, or a collaboration? Reach me by email or find me on Instagram.</p></div><div class="contact-actions"><a class="button primary" href="mailto:devansh003@yahoo.com">Email Devansh <span class="arrow" aria-hidden="true">↗</span></a><a class="button" href="https://www.instagram.com/the_unseen.soul03/" target="_blank" rel="noopener noreferrer">Instagram @the_unseen.soul03 <span class="arrow" aria-hidden="true">↗</span></a><button type="button" class="button" id="copyLinkButton">Copy page link <span class="arrow" aria-hidden="true">↗</span></button></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="wrap"><div class="footer-inner"><div><span class="footer-brand">Devansh Mishra.</span> <span>Curious by design.</span></div><div class="footer-right"><a href="mailto:devansh003@yahoo.com">devansh003@yahoo.com</a><a href="https://www.instagram.com/the_unseen.soul03/" target="_blank" rel="noopener noreferrer">Instagram</a><span>Built with HTML, CSS & vanilla JS.</span><a class="backtop" href="#home" aria-label="Back to top">↑</a></div></div><div class="footnote">Public profile · Last updated October 2026 · This page describes shared interests and learning areas, not private conversations. Add verified links and milestones as they become available.</div></div></footer>
+  <button class="motion-toggle" id="motionToggle" type="button" aria-pressed="false"><span aria-hidden="true">◌</span><span id="motionLabel">Motion: On</span></button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    (() => {
+      'use strict';
+      const $ = (selector, root = document) => root.querySelector(selector);
+      const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+      const body = document.body;
+      let motionEnabled = !reducedMotion.matches;
+      let toastTimer = 0;
+
+      // Keep the year automatically current.
+      const currentYear = new Date().getFullYear();
+      const yearText = $('#year');
+      if (yearText) yearText.textContent = currentYear;
+
+      // Responsive navigation that is keyboard and screen-reader friendly.
+      const menuButton = $('#menuButton');
+      const navlinks = $('#navlinks');
+      const menuIcon = $('#menuIcon');
+      const closeMenu = () => {
+        navlinks.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuIcon.textContent = '☰';
+      };
+      menuButton.addEventListener('click', () => {
+        const open = navlinks.classList.toggle('open');
+        menuButton.setAttribute('aria-expanded', String(open));
+        menuIcon.textContent = open ? '×' : '☰';
+      });
+      $$('.navlinks a').forEach(link => link.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
+
+      // Progress bar, active navigation, and scroll-triggered reveals.
+      const progress = $('#scrollProgress');
+      let scrollQueued = false;
+      const updateScrollUI = () => {
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        const value = maxScroll > 0 ? window.scrollY / maxScroll : 0;
+        progress.style.transform = `scaleX(${Math.min(1, Math.max(0, value))})`;
+        scrollQueued = false;
+      };
+      window.addEventListener('scroll', () => {
+        if (!scrollQueued) { window.requestAnimationFrame(updateScrollUI); scrollQueued = true; }
+      }, { passive: true });
+      updateScrollUI();
+
+      const revealItems = $$('.reveal');
+      if ('IntersectionObserver' in window && !reducedMotion.matches) {
+        const revealObserver = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: .12, rootMargin: '0px 0px -30px 0px' });
+        revealItems.forEach(item => revealObserver.observe(item));
+      } else revealItems.forEach(item => item.classList.add('in-view'));
+
+      const sectionObserver = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          $$('.navlinks a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${entry.target.id}`));
+        });
+      }, { rootMargin: '-35% 0px -58% 0px' }) : null;
+      if (sectionObserver) $$('main section[id]').forEach(section => sectionObserver.observe(section));
+
+      // Rotating role line: short, quiet, and disabled for reduced-motion preferences.
+      const roleEl = $('#typedRole');
+      const roles = ['Tech explorer', 'Python learner', 'Problem solver', 'Creative thinker'];
+      let roleIndex = 0;
+      if (!reducedMotion.matches) {
+        window.setInterval(() => {
+          if (!motionEnabled || document.hidden) return;
+          roleIndex = (roleIndex + 1) % roles.length;
+          roleEl.animate([{ opacity: 1, transform: 'translateY(0)' }, { opacity: 0, transform: 'translateY(5px)' }], { duration: 170, easing: 'ease-in', fill: 'forwards' }).onfinish = () => {
+            roleEl.textContent = roles[roleIndex];
+            roleEl.animate([{ opacity: 0, transform: 'translateY(-5px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 260, easing: 'ease-out', fill: 'forwards' });
+          };
+        }, 3000);
+      }
+
+      // Starfield canvas: capped particle count, low motion, no external assets.
+      const canvas = $('#starfield');
+      const ctx = canvas.getContext('2d', { alpha: true });
+      let width = 0, height = 0, dpr = 1, stars = [], raf = 0, lastFrame = 0;
+      const pointer = { x: .5, y: .35, active: false };
+      function sizeCanvas() {
+        dpr = Math.min(window.devicePixelRatio || 1, 1.6);
+        width = window.innerWidth; height = window.innerHeight;
+        canvas.width = Math.floor(width * dpr); canvas.height = Math.floor(height * dpr);
+        canvas.style.width = `${width}px`; canvas.style.height = `${height}px`;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        const count = Math.min(105, Math.max(38, Math.round(width * height / 14500)));
+        stars = Array.from({ length: count }, () => ({ x: Math.random() * width, y: Math.random() * height, r: Math.random() * 1.25 + .25, a: Math.random() * .55 + .15, speed: Math.random() * .15 + .025, phase: Math.random() * Math.PI * 2 }));
+        drawStars(0, true);
+      }
+      function drawStars(time, staticOnly = false) {
+        if (!ctx) return;
+        ctx.clearRect(0, 0, width, height);
+        for (const star of stars) {
+          let alpha = star.a;
+          if (!staticOnly && motionEnabled) alpha *= .72 + Math.sin(time * .00065 + star.phase) * .24;
+          const dx = pointer.active && motionEnabled ? (pointer.x - .5) * star.r * 7 : 0;
+          const dy = pointer.active && motionEnabled ? (pointer.y - .5) * star.r * 7 : 0;
+          ctx.beginPath(); ctx.arc(star.x + dx, star.y + dy, star.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(159, 205, 255, ${alpha})`; ctx.fill();
+        }
+      }
+      function animateStars(time) {
+        if (!motionEnabled || document.hidden) { raf = 0; drawStars(0, true); return; }
+        if (time - lastFrame > 40) { drawStars(time); lastFrame = time; }
+        raf = window.requestAnimationFrame(animateStars);
+      }
+      function startStars() { if (motionEnabled && !raf) raf = window.requestAnimationFrame(animateStars); }
+      function stopStars() { if (raf) window.cancelAnimationFrame(raf); raf = 0; drawStars(0, true); }
+      window.addEventListener('resize', sizeCanvas, { passive: true });
+      document.addEventListener('visibilitychange', () => { if (document.hidden) stopStars(); else startStars(); });
+      if (finePointer.matches) window.addEventListener('pointermove', event => { pointer.x = event.clientX / Math.max(1, width); pointer.y = event.clientY / Math.max(1, height); pointer.active = true; }, { passive: true });
+      sizeCanvas(); startStars();
+
+      // Desktop cursor and slight 3D tilt; touch screens use their normal controls.
+      const dot = $('#cursorDot'), ring = $('#cursorRing');
+      if (finePointer.matches && !reducedMotion.matches) {
+        body.classList.add('cursor-ready');
+        let cursorFrame = 0, cx = 0, cy = 0, rx = 0, ry = 0;
+        window.addEventListener('pointermove', event => {
+          cx = event.clientX; cy = event.clientY;
+          if (!cursorFrame) cursorFrame = requestAnimationFrame(() => {
+            dot.style.transform = `translate(${cx}px, ${cy}px) translate(-50%,-50%)`;
+            ring.style.transform = `translate(${cx}px, ${cy}px) translate(-50%,-50%)`;
+            cursorFrame = 0;
+          });
+        }, { passive: true });
+        $$('a,button,.interest-card,.work-card').forEach(el => {
+          el.addEventListener('pointerenter', () => body.classList.add('cursor-hover'));
+          el.addEventListener('pointerleave', () => body.classList.remove('cursor-hover'));
+        });
+      }
+      const profileArt = $('#profileArt');
+      const stage = $('#visualStage');
+      if (finePointer.matches && !reducedMotion.matches) {
+        stage.addEventListener('pointermove', event => {
+          const rect = stage.getBoundingClientRect();
+          const px = (event.clientX - rect.left) / rect.width - .5;
+          const py = (event.clientY - rect.top) / rect.height - .5;
+          profileArt.style.transform = `rotateY(${px * 8}deg) rotateX(${-py * 7}deg) translateZ(0)`;
+        }, { passive: true });
+        stage.addEventListener('pointerleave', () => { profileArt.style.transform = 'rotateY(0) rotateX(0)'; });
+        $$('.interest-card').forEach(card => {
+          card.addEventListener('pointermove', event => {
+            if (!motionEnabled) return;
+            const r = card.getBoundingClientRect();
+            const x = (event.clientX - r.left) / r.width - .5;
+            const y = (event.clientY - r.top) / r.height - .5;
+            card.style.transform = `perspective(800px) rotateX(${-y * 4}deg) rotateY(${x * 5}deg) translateY(-3px)`;
+          }, { passive: true });
+          card.addEventListener('pointerleave', () => { card.style.transform = ''; });
+        });
+        $$('.magnetic').forEach(el => {
+          el.addEventListener('pointermove', event => {
+            if (!motionEnabled) return;
+            const r = el.getBoundingClientRect();
+            const x = event.clientX - r.left - r.width / 2;
+            const y = event.clientY - r.top - r.height / 2;
+            el.style.transform = `translate(${x * .08}px, ${y * .12}px)`;
+          }, { passive: true });
+          el.addEventListener('pointerleave', () => { el.style.transform = ''; });
+        });
+      }
+
+      // Share/copy actions don't need a backend and gracefully handle unsupported APIs.
+      const toast = $('#toast');
+      const showToast = message => {
+        toast.textContent = message; toast.classList.add('show');
+        window.clearTimeout(toastTimer); toastTimer = window.setTimeout(() => toast.classList.remove('show'), 2400);
+      };
+      async function copyPageLink() {
+        const url = window.location.href;
+        try {
+          if (navigator.clipboard && window.isSecureContext) await navigator.clipboard.writeText(url);
+          else {
+            const area = document.createElement('textarea'); area.value = url; area.setAttribute('readonly','');
+            area.style.position = 'fixed'; area.style.opacity = '0'; document.body.appendChild(area); area.select();
+            const copied = document.execCommand('copy'); area.remove();
+            if (!copied) throw new Error('Copy not available');
+          }
+          showToast('Page link copied. Share it with your people!');
+        } catch (_) { showToast('Copy unavailable here — use your browser’s Share option.'); }
+      }
+      $('#copyLinkButton').addEventListener('click', copyPageLink);
+      $('#shareButton').addEventListener('click', async () => {
+        const shareData = { title: document.title, text: 'Check out Devansh Mishra’s personal portfolio.', url: window.location.href };
+        if (navigator.share) { try { await navigator.share(shareData); } catch (error) { if (error && error.name !== 'AbortError') copyPageLink(); } }
+        else copyPageLink();
+      });
+
+      // One switch reduces decorative motion without disabling navigation or content.
+      const motionButton = $('#motionToggle');
+      const motionLabel = $('#motionLabel');
+      function setMotion(enabled) {
+        motionEnabled = enabled;
+        body.classList.toggle('motion-off', !enabled);
+        motionButton.setAttribute('aria-pressed', String(!enabled));
+        motionLabel.textContent = enabled ? 'Motion: On' : 'Motion: Off';
+        if (enabled) startStars(); else stopStars();
+        if (!enabled) {
+          profileArt.style.transform = '';
+          $$('.interest-card,.magnetic').forEach(el => el.style.transform = '');
+          body.classList.remove('cursor-hover');
+        }
+      }
+      motionButton.addEventListener('click', () => setMotion(!motionEnabled));
+      if (reducedMotion.matches) setMotion(false);
+    })();
+  </script>
+</body>
+</html>
